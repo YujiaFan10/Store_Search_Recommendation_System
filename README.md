@@ -1,2 +1,2 @@
 # Store_Search_Recommendation_System
-This is a SpringBoot project with ElasticSearch and Spark.
+This is a Java SpringBoot project with ElasticSearch and Spark.
