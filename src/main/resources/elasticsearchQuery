@@ -1,0 +1,171 @@
+# ElasticSearch DSL
+
+#Default Sorting Model using "function score"
+GET /shop/_search
+{
+  "_source": "*",
+  "script_fields": {
+    "distance": {
+      "script": {
+        "source": "haversin(lat,lon,doc['location'].lat,doc['location'].lon)",
+        "lang": "expression",
+        "params": {"lat":31.3756,"lon":121.9832}
+      }
+    }
+  },
+  "query": {
+    "function_score": {
+      "query": {
+        "bool": {
+          "must": [
+            {"match":{"name": {"query": "凯悦","boost": 0.1}}},
+            {"term":{"seller_disabled_flag": 0}},
+            {"term":{"category_id": 2}}
+          ]
+        }
+      },
+      "functions": [
+        {
+          "gauss": {
+            "location": {
+              "origin": "31.3756,121.9832",
+              "scale": "100km",
+              "offset": "0km",
+              "decay": 0.5
+            }
+          },
+          "weight": 5
+        },
+        {
+          "field_value_factor": {
+            "field": "remark_score"
+          },
+          "weight": 0.2
+        },
+        {
+          "field_value_factor": {
+            "field": "seller_remark_score"
+          },
+          "weight": 0.1
+        }
+      ],
+      "score_mode": "sum",
+      "boost_mode": "sum"
+    }
+  },
+  "sort": [
+    {
+      "_score": {"order": "desc"}
+    }
+  ]
+}
+
+#Sorting Model using "price_per_man"
+GET /shop/_search
+{
+  "_source": "*",
+  "script_fields": {
+    "distance": {
+      "script": {
+        "source": "haversin(lat,lon,doc['location'].lat,doc['location'].lon)",
+        "lang": "expression",
+        "params": {"lat":31.3756,"lon":121.9832}
+      }
+    }
+  },
+  "query": {
+    "function_score": {
+      "query": {
+        "bool": {
+          "must": [
+            {"match":{"name": {"query": "凯悦","boost": 0.1}}},
+            {"term":{"seller_disabled_flag": 0}},
+            {"term":{"category_id": 2}}
+          ]
+        }
+      },
+      "functions": [
+        {
+          "field_value_factor": {
+            "field": "price_per_man"
+          },
+          "weight": 1
+        }
+      ],
+      "score_mode": "sum",
+      "boost_mode": "replace"
+    }
+  },
+  "sort": [
+    {
+      "_score": {"order": "asc"}
+    }
+  ]
+}
+
+##Default Sorting Model using "function score" with "tags" filter
+GET /shop/_search
+{
+  "_source": "*",
+  "script_fields": {
+    "distance": {
+      "script": {
+        "source": "haversin(lat,lon,doc['location'].lat,doc['location'].lon)",
+        "lang": "expression",
+        "params": {"lat":31.3756,"lon":121.9832}
+      }
+    }
+  },
+  "query": {
+    "function_score": {
+      "query": {
+        "bool": {
+          "must": [
+            {"match":{"name": {"query": "凯悦","boost": 0.1}}},
+            {"term":{"seller_disabled_flag": 0}},
+            {"match":{"tags":"落地大窗"}}
+          ]
+        }
+      },
+      "functions": [
+        {
+          "gauss": {
+            "location": {
+              "origin": "31.3756,121.9832",
+              "scale": "100km",
+              "offset": "0km",
+              "decay": 0.5
+            }
+          },
+          "weight": 5
+        },
+        {
+          "field_value_factor": {
+            "field": "remark_score"
+          },
+          "weight": 0.2
+        },
+        {
+          "field_value_factor": {
+            "field": "seller_remark_score"
+          },
+          "weight": 0.1
+        }
+      ],
+      "score_mode": "sum",
+      "boost_mode": "sum"
+    }
+  },
+  "sort": [
+    {
+      "_score": {"order": "desc"}
+    }
+  ],
+  "aggs": {
+    "group_by_tags": {
+      "terms": {
+        "field": "tags"
+      }
+    }
+  }
+}

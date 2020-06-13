@@ -1,0 +1,40 @@
+server:
+  servlet:
+    context-path:
+  port: 8080
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/searchdb?useUnicode=true&characterEncoding=utf-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    username: root
+    password: fanyujia1995
+    name: searchdb
+    type: com.alibaba.druid.pool.DruidDataSource
+
+  resources:
+    add-mappings: true
+  mvc:
+    throw-exception-if-no-handler-found: true
+    static-path-pattern: /static/**
+
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+
+  elasticsearch:
+    rest:
+      uris: 127.0.0.1:9200
+
+
+mybatis:
+  mapper-locations: classpath:mapping/*.xml
+
+# Admin Account:
+admin.email: admin@search.com
+admin.encryptPassword: gnzLDuqKcGxMNKFokfhOew==
+
+#Elastic Search
+elasticsearch.ip: 127.0.0.1:9200
+
+
