@@ -59,4 +59,4 @@ POST	| /user/register	| Register new account	| ✓  | ×
 
 # Preview
 
- <img src="pic/userLogin.png" width = "270" height = "480" alt="" align=center />
+ ![UI](pic/adminIndex.png)
