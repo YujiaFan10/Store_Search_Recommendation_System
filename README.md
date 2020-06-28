@@ -66,3 +66,11 @@ POST	| /user/register	| Register new account	| ✓  | ×
  ![UI](pic/categoryIndex.png)
  
  ![UI](pic/sellerIndex.png)
+ 
+ ![UI](pic/storeCreate.png)
+ 
+ ![UI](pic/categoryCreate.png)
+ 
+ ![UI](pic/sellerCreate.png)
+ 
+ ![UI](pic/adminLogin.png)
