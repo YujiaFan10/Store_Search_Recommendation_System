@@ -4,6 +4,8 @@ Based on the store search and recommendation business, used [SpringBoot](https:/
 
 Also used [canal](https://github.com/alibaba/canal) to synchronize MySQL and ElasticSearch.
 
+![UI](pic/flow.png)
+
 #### Recommentdation & Search service
 Provide users with Location based conditional search and personalized recommendation functions.
 
