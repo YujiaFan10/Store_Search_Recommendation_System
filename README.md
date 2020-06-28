@@ -1,5 +1,8 @@
 # Store_Search_Recommendation_System
-This is a Java SpringBoot project with ElasticSearch and Spark.
+
+Based on the store search and recommendation business, used [SpringBoot](https://spring.io/projects/spring-boot) + [Mybatis](https://mybatis.org/mybatis-3/) + [MySQL8.0](https://www.mysql.com) + [ElasticSearch7](https://www.elastic.co/elasticsearch/) + [Spark](http://spark.apache.org) to complete user login, registration, merchant settlement, store search & customized recommendation and combined with front-end templates to build a backend management system.
+
+Also used [canal](https://github.com/alibaba/canal) to synchronize MySQL and ElasticSearch.
 
 #### Recommentdation & Search service
 Provide users with Location based conditional search and personalized recommendation functions.
