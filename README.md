@@ -60,6 +60,9 @@ POST	| /user/register	| Register new account	| ✓  | ×
 # Preview
 
  ![UI](pic/adminIndex.png)
+ 
  ![UI](pic/shopIndex.png)
+ 
  ![UI](pic/categoryIndex.png)
+ 
  ![UI](pic/sellerIndex.png)
