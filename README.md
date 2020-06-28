@@ -33,7 +33,7 @@ Method	| Path	| Description	| Admin authenticated	| Available from UI
 GET	| /admin/seller/index	| Get seller statistics	          | ✓ | 	✓
 GET	| /admin/seller/createpage	| Direct to create page	| ✓  | ✓ 
 POST	| /admin/seller/create	| Create a new seller	|  ✓ |  ✓
-POST	| /admin/seller/diable	| Disable a certain seller	|  ✓ |  ✓
+POST	| /admin/seller/disable	| Disable a certain seller	|  ✓ |  ✓
 POST	| /admin/seller/enable	| Enable  a certain seller	|  ✓ |  ✓
 
 Provide multiple operations to stores.
@@ -59,3 +59,4 @@ POST	| /user/register	| Register new account	| ✓  | ×
 
 # Preview
 
+ <img src="pic/userLogin.png" width = "350" height = "800" alt="" align=center />
