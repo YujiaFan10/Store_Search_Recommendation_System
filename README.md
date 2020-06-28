@@ -57,9 +57,9 @@ Method	| Path	| Description	| User authenticated	| Available from UI
 ------------- | ------------------------- | ------------- |:-------------:|:----------------:|
 GET	| /user/get?{id}	| Get specified account data	| × | ×	
 GET	| /user/getcurrentuser	| Get current account data	| ✓  | ×
-POST	| /user/login	| User login	| ×  | 	×
-POST	| /user/logout	| User logout	|  ✓ | ×
-POST	| /user/register	| Register new account	| ✓  | ×
+POST	| /user/login	| User login	| ×  | 	✓
+POST	| /user/logout	| User logout	|  ✓ | ✓
+POST	| /user/register	| Register new account	| ✓  | ✓
 
 
 # Preview
