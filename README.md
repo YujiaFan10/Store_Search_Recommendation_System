@@ -59,6 +59,22 @@ POST	| /user/register	| Register new account	| ✓  | ×
 
 # Preview
 
+<table><tr>
+<td><img src=pic/recommendpage.png border=1 cellspacing="10"></td>
+<td><img src=pic/searchpage02.png border=1 cellspacing="10"></td>
+</tr></table>
+ 
+<table><tr>
+<td><img src=pic/searchpage.png border=1 cellspacing="10"></td>
+<td><img src=pic/searchpage01.png border=1 cellspacing="10"></td>
+</tr></table>
+
+
+<table><tr>
+<td><img src=pic/userLogin.png border=1 cellspacing="10"></td>
+<td><img src=pic/userRegister.png border=1 cellspacing="10"></td>
+</tr></table>
+
  ![UI](pic/adminIndex.png)
  
  ![UI](pic/shopIndex.png)
