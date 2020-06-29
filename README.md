@@ -95,3 +95,9 @@ POST	| /user/register	| Register new account	| ✓  | ✓
  ![UI](pic/sellerCreate.png)
  
  ![UI](pic/adminLogin.png)
+ 
+ ## Contributions are welcome!
+
+Feel free to suggest and implement improvements.
+
+yujiafan10@gmail.com
